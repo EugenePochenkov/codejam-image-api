@@ -1,0 +1,28 @@
+.header {
+  display: flex;
+  width: 100%;
+  min-height: 48px;
+  padding-top: 8px;
+  padding-right: 16px;
+  padding-left: 16px;
+
+  background-color: $bg-color--lighten;
+  box-shadow: $block-shadow;
+}
+
+.header__burger {
+  margin-right: 35px;
+}
+
+.header__title {
+  font-family: $font-family--1;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 23px;
+  color: $text-color--darken;
+}
+
+.header__options {
+  margin-left: auto;
+}

@@ -1,0 +1,9 @@
+.size-switcher {
+  @include centering();
+
+  margin-top: 10px;
+}
+
+.size-switcher__btn {
+  margin-right: 10px;
+}

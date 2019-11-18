@@ -1,0 +1,35 @@
+.load-img {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-bottom: 10px;
+}
+
+.load-img__btn {
+  margin-right: 10px;
+}
+
+.load-img__grayscale {
+  margin-left: 10px;
+}
+
+.load-img__input {
+  flex-grow: 1;
+  padding: 5px 15px;
+
+  font-family: $font-family--1;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 24px;
+  color: $text-color--darken;
+
+  background-color: $bg-color--lighten;
+  border: 0;
+  border-radius: 5px;
+
+  &:focus {
+    outline: none;
+  }
+}

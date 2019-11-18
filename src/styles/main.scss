@@ -1,0 +1,21 @@
+@import './abstracts/variables';
+@import './abstracts/mixins';
+
+@import './base/reset';
+@import './base/typography';
+@import './base/global';
+
+@import './components/burger';
+@import './components/options';
+@import './components/toolbar';
+@import './components/canvas';
+@import './components/load-img';
+@import './components/size-switcher';
+@import './components/btn';
+@import './components/alert';
+
+@import './layout/header';
+@import './layout/main';
+
+@import './abstracts/active';
+

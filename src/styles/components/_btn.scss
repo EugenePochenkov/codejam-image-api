@@ -1,0 +1,19 @@
+.btn {
+  @include centering();
+
+  padding: 5px 15px;
+
+  font-family: $font-family--1;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 24px;
+  color: $bg-color--lighten;
+
+  background-color: $bg-color--predefined2;
+  border-radius: 5px;
+
+  &:focus {
+    outline: none;
+  }
+}
