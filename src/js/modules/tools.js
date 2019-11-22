@@ -60,20 +60,27 @@ canvas.addEventListener('click', (e) => {
 let isDrawing = false;
 let lastX = 0;
 let lastY = 0;
+const DEFAULT_WIDTH = 512;
+let movementOffsetX;
+let movementOffsetY;
 
 function draw(e) {
   if (!isDrawing) return;
+  const movementCoefficient = canvas.width / DEFAULT_WIDTH;
 
-  context.lineWidth = 512 / 32;
+  movementOffsetX = e.offsetX * movementCoefficient;
+  movementOffsetY = e.offsetY * movementCoefficient;
+
+  context.lineWidth = canvas.width / 32;
   context.lineHeight = context.lineWidth;
   context.strokeStyle = data.currentColor;
   context.lineJoin = 'round';
   context.lineCap = 'round';
   context.beginPath();
   context.moveTo(lastX, lastY);
-  context.lineTo(e.offsetX, e.offsetY);
+  context.lineTo(movementOffsetX, movementOffsetY);
   context.stroke();
-  [lastX, lastY] = [e.offsetX, e.offsetY];
+  [lastX, lastY] = [movementOffsetX, movementOffsetY];
 }
 
 canvas.addEventListener('mousemove', draw);
@@ -81,7 +88,12 @@ canvas.addEventListener('mousemove', draw);
 canvas.addEventListener('mousedown', (e) => {
   if (data.tool === 'pencil') {
     isDrawing = true;
-    [lastX, lastY] = [e.offsetX, e.offsetY];
+    const movementCoefficient = canvas.width / DEFAULT_WIDTH;
+
+    movementOffsetX = e.offsetX * movementCoefficient;
+    movementOffsetY = e.offsetY * movementCoefficient;
+
+    [lastX, lastY] = [movementOffsetX, movementOffsetY];
   }
 });
 
